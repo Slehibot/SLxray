@@ -26,12 +26,13 @@ Sample Configuration : vless TLS 8443
 ```
 vless://5640479b-bf51-4dbd-a5b8-86cac95000a9@172.105.125.93:8443?security=xtls&encryption=none&headerType=none&type=tcp&flow=xtls-rprx-splice&sni=www.facebook.com#Lakmal_SG_Xray_ 
 ```
-SSL PATH
-crt
+##SSL PATH
+
+* crt
 ```
 /etc/xray/xray.crt
 ```
-Key
+* Key
 ```
-etc/xray/xray.key
+/etc/xray/xray.key
 ```
