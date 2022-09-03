@@ -182,10 +182,13 @@ EOF
 
 #accuring a ssl certificate (self-sigend openssl)
 
+openssl req -new -newkey rsa:4096 -days 365 -nodes -x509 \
+    -subj "/C=US/ST=Denial/L=Springfield/O=Dis/CN=www.example.com" \
+    -keyout xray.key  -out xray.crt
 mkdir /etc/xray
-cp v2ray.key /etc/v2ray/v2ray.key
-cp v2ray.crt /etc/v2ray/v2ay.crt
-chmod 644 /etc/v2ray/v2ray.key
+cp xray.key /etc/xray/xray.key
+cp xray.crt /etc/xray/xray.crt
+chmod 644 /etc/xray/xray.key
 
 #starting xray core on sytem startup
 
