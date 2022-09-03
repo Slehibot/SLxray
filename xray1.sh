@@ -179,3 +179,22 @@ cat << EOF > /usr/local/etc/xray/config.json
   ]
 }
 EOF
+
+#accuring a ssl certificate (self-sigend openssl)
+
+mkdir /etc/xray
+cp xray.key /etc/xray/xray.key
+cp xray.crt /etc/xray/xray.crt
+chmod 644 /etc/xray/xray.key
+
+#starting xray core on sytem startup
+
+systemctl enable xray
+systemctl restart xray
+
+#install bbr
+
+mkdir ~/across
+git clone https://github.com/teddysun/across ~/across
+chmod 777 ~/across
+bash ~/across/bbr.sh
